@@ -1,0 +1,9 @@
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+build/
+# XcodeGen generated
+HushHour/Info.plist
+.DS_Store

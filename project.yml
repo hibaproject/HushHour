@@ -1,0 +1,26 @@
+name: HushHour
+options:
+  bundleIdPrefix: com.hushhour
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  HushHour:
+    type: application
+    platform: iOS
+    sources: [HushHour]
+    info:
+      path: HushHour/Info.plist
+      properties:
+        CFBundleDisplayName: Hush Hour
+        CFBundleDevelopmentRegion: fr
+        UILaunchScreen: {}
+        UIBackgroundModes: [audio]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hushhour.app
+        CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
