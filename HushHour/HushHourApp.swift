@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct BruitDeNuitApp: App {
+struct HushHourApp: App {
     @StateObject private var store: ScheduleStore
     @StateObject private var night: NightController
 

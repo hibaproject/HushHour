@@ -1,24 +1,24 @@
-name: BruitDeNuit
+name: HushHour
 options:
-  bundleIdPrefix: com.bruitdenuit
+  bundleIdPrefix: com.hushhour
   deploymentTarget:
     iOS: "16.0"
 targets:
-  BruitDeNuit:
+  HushHour:
     type: application
     platform: iOS
-    sources: [BruitDeNuit]
+    sources: [HushHour]
     info:
-      path: BruitDeNuit/Info.plist
+      path: HushHour/Info.plist
       properties:
-        CFBundleDisplayName: Bruit de Nuit
+        CFBundleDisplayName: Hush Hour
         CFBundleDevelopmentRegion: fr
         UILaunchScreen: {}
         UIBackgroundModes: [audio]
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.bruitdenuit.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.hushhour.app
         CODE_SIGN_STYLE: Automatic
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.0"

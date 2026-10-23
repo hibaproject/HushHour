@@ -70,7 +70,7 @@ struct ContentView: View {
             }
             .scrollContentBackground(.hidden)
             .background(Theme.night)
-            .navigationTitle("Bruit de Nuit")
+            .navigationTitle("Hush Hour")
             .toolbar {
                 Button {
                     isNew = true
