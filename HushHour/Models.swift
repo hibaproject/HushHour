@@ -34,7 +34,7 @@ struct Schedule: Codable, Identifiable, Equatable {
     var days: Set<Int> = Set(1...7)
     var sound: SoundKind = .brown
     var volume: Double = 0.6
-    var fadeMinutes: Int = 10
+    var fadeMinutes: Int = 30
     var isOn: Bool = true
 
     /// Durée de la plage en minutes (gère le passage de minuit).
