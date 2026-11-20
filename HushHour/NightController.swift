@@ -102,7 +102,8 @@ final class NightController: ObservableObject {
             let s = active.schedule, elapsed = active.elapsed
             let fadeIn = s.fadeMinutes > 0 ? min(1, elapsed / Double(s.fadeMinutes)) : 1
             let fadeOut = min(1, (Double(s.duration) - elapsed) / 0.5) // 30 s de fondu à la fin
-            let ok = engine.apply(sound: s.sound, volume: Float(s.volume * fadeIn * fadeOut), fileURL: store.customSoundURL)
+            let gain = s.volume * Self.loudnessCurve(fadeIn) * fadeOut
+            let ok = engine.apply(sound: s.sound, volume: Float(gain), fileURL: store.customSoundURL)
             errorMessage = ok ? nil : "Ton fichier audio est introuvable. Choisis-le à nouveau dans la programmation."
             playing = ok ? s : nil
             fadeProgress = fadeIn
@@ -110,6 +111,14 @@ final class NightController: ObservableObject {
             engine.apply(sound: nil, volume: 0, fileURL: nil)
             playing = nil
         }
+    }
+
+    /// L'oreille perçoit le volume en décibels : une montée linéaire paraît brutale au début puis plate.
+    /// On monte donc de -50 dB à 0 dB à vitesse constante, ce qui s'entend comme une montée douce et régulière.
+    private static func loudnessCurve(_ progress: Double) -> Double {
+        guard progress > 0 else { return 0 }
+        guard progress < 1 else { return 1 }
+        return pow(10, 2.5 * (progress - 1))
     }
 
     private func stopEngineSoon() {

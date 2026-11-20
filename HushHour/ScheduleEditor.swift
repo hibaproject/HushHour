@@ -70,7 +70,7 @@ struct ScheduleEditor: View {
                     }
                     Picker("Montée progressive", selection: $draft.fadeMinutes) {
                         Text("Aucune").tag(0)
-                        ForEach([1, 5, 10, 20, 30], id: \.self) { Text("\($0) min").tag($0) }
+                        ForEach([1, 5, 10, 20, 30, 45, 60, 90], id: \.self) { Text("\($0) min").tag($0) }
                     }
                     Button(night.previewing ? "Arrêter l'écoute" : "Écouter 10 s") {
                         night.togglePreview(sound: draft.sound, volume: draft.volume)
